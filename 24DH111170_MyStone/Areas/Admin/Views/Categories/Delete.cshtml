@@ -1,0 +1,36 @@
+﻿@model _24DH111170_MyStone.Models.Category
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>XÓA THÔNG TIN SẢN PHẨM </h2>
+
+<h3>Bạn muốn xóa thông tin sản phẩm này không</h3>
+<div>
+    <h4>Category</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*Html.DisplayNameFor(model => model.CategoryName)*@
+            TÊN DANH MỤC
+        </dt>
+        @*Hiển thị giá trị name của Caterory*@
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại trang chủ ", "Index")
+        </div>
+    }
+
+
+</div>
